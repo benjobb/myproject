@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ org.name }} - {{ block.super }}
+{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item">Scoreboard</li>
+<li class="breadcrumb-item active">{{ org.name }} Details</li>
+{% endblock%}
+
+{% block content %}
+
+      <ol class="breadcrumb my-4">
+      </ol>
+
+{% endblock %}

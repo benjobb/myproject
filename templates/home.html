@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Scoreboard</li>
+{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'new_points' %}">Add points</a>
+
+      <table class="table">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Organization</th>
+            <th>Representative</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+          {% for org in competing_orgs %}
+            <tr>
+              <td>
+                  <a href="{% url 'competing_orgs' org.pk %}">{{ org.name }}</a>
+              </td>
+              <td>{{ org.representative}}</td>
+              <td class="align-middle">{{org.points}}</td>
+
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+{% endblock %}

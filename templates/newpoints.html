@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Awarding points
+{% endblock %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item">Scoreboard</li>
+<li class="breadcrumb-item active">Awarding Points</li>
+{% endblock%}
+
+{% block content %}
+<div class="container-fluid">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Post</button>
+  </form>
+</div>
+{% endblock %}

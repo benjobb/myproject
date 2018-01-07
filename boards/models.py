@@ -7,13 +7,20 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Competing_Organizations(models.Model):
-    name= models.CharField(max_length=50, unique = True)
+    name = models.CharField(max_length=50, unique = True)
     representative = models.ForeignKey(User,related_name='competing_org_representative')
     points = models.DecimalField(max_digits = 5, decimal_places = 1)
 
+    def __unicode__(self):
+        return self.name
+
 class Awarding_Organizations(models.Model):
     name = models.CharField(max_length = 50, unique = True)
-    representative = models.ForeignKey(User,related_name='awarding_org_representative')
+    representative = models.ForeignKey(User,related_name='awarding_org_representative', blank=True, null=True)
+
+    def __unicode__(self):
+        return self.name
+
 
 class Points(models.Model):
     points = models.DecimalField(max_digits=5, decimal_places=1)

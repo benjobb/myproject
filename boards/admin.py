@@ -9,3 +9,4 @@ from .models import *
 
 admin.site.register(Competing_Organizations)
 admin.site.register(Awarding_Organizations)
+admin.site.register(Points)
